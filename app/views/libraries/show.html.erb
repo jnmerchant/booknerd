@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Library type:</strong>
+  <%= @library.library_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @library.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_library_path(@library) %> |
+<%= link_to 'Back', libraries_path %>

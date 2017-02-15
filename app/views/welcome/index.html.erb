@@ -1,0 +1,23 @@
+<h1>BookNerds</h1>
+
+<h3>What area of BookNerds would you like to explore?</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= link_to 'Users', users_url %></td>
+      <td><%= link_to 'Libraries', libraries_url %></td>
+      <td><%= link_to 'Books', books_url %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= image_tag('books.jpg', :alt => 'books') %>

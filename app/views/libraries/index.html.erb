@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Libraries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Library type</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @libraries.each do |library| %>
+      <tr>
+        <!-- <td><%= library.library_type %></td> -->
+        <td><%= link_to library.library_type, books_url(library_id: library.id) %></td>
+        <td><%= library.user.name %></td>
+        <td><%= link_to 'Show', library %></td>
+        <td><%= link_to 'Edit', edit_library_path(library) %></td>
+        <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Library', new_library_path %>
+<%= link_to 'Go Home', '/' %>
