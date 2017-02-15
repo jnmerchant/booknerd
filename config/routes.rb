@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'welcome#index'
+  root 'welcome#index'
 
   resources :books
   resources :libraries

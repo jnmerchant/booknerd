@@ -28,8 +28,9 @@
 
   <div class="field">
     <%= f.label :library_id %>
+    <%= f.select :library_id, options_for_select(@libraries, selected: f.object.library_id) %>
     <!-- <%= f.text_field :library_id %> -->
-    <%= f.collection_select :library_id, Library.order(:library_type), :id, :library_type, include_blank: false %>
+    <!-- <%= f.collection_select :library_id, Library.order(:library_type), :id, :library_type, include_blank: false %> -->
   </div>
 
   <div class="actions">

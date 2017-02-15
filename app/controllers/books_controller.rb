@@ -22,10 +22,13 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+
+    set_libraries
   end
 
   # GET /books/1/edit
   def edit
+    set_libraries
   end
 
   # POST /books
@@ -69,6 +72,15 @@ class BooksController < ApplicationController
   end
 
   private
+    def set_libraries
+      @libraries = []
+      Library.all.each do |library|
+        id = library.id
+        name = "#{library.library_type} - #{library.user.name}"
+        @libraries << [name, id]
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
